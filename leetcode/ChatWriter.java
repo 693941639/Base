@@ -4,12 +4,12 @@ import java.io.*;
 import java.util.Arrays;
 
 public class ChatWriter implements Runnable {
-    private BufferedWriter writer;
+    private PrintWriter writer;
 
     private BufferedReader reader;
 
     public ChatWriter(OutputStream os) {
-        this.writer = new BufferedWriter(new OutputStreamWriter(os));
+        this.writer = new PrintWriter(new OutputStreamWriter(os));
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
