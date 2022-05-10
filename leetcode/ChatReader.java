@@ -15,11 +15,14 @@ public class ChatReader implements Runnable {
 
     @Override
     public void run() {
-        char[] chars = new char[200];
+        String info;
         while (true) {
             try {
-                if (this.reader.read(chars) != -1)  {
-                    System.out.println(Arrays.toString(chars));
+                info = this.reader.readLine();
+                if (info.trim().contains("exit"))  {
+                    break;
+                } else {
+                    System.out.println(info);
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
