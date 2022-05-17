@@ -10,7 +10,7 @@ public class ChatClient {
         ) {
             ChatService cs = new ChatService(s);
             cs.run();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }

@@ -14,7 +14,7 @@ public class ChatServer {
                 ChatService cs = new ChatService(socket);
                 cs.run();
             }
-        } catch (IOException e) {
+        } catch (InterruptedException | IOException e) {
             throw new RuntimeException(e);
         }
     }
